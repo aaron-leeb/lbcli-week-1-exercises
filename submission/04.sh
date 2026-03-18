@@ -1,6 +1,4 @@
 # Create a wallet with the name "builderswallet".
 bitcoin-cli -regtest -named createwallet wallet_name="builderswallet" descriptors=true
 
-ADDRESS=$(bitcoin-cli -regtest -rpcwallet=builderswallet getnewaddress -addresstype p2sh-segwit)
-
-bitcoin-cli -regtest -rpcwallet=builderswallet generatetoaddress 1 "$ADDRESS"
+bitcoin-cli -regtest -rpcwallet=builderswallet -generate 1
